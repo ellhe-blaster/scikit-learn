@@ -9,10 +9,11 @@ regression with large design matrix), this approach gives very
 significant speedups.
 """
 
+# Authors: The scikit-learn developers
+# SPDX-License-Identifier: BSD-3-Clause
+
 # This is a modified file from scipy.optimize
 # Original authors: Travis Oliphant, Eric Jones
-# Modifications by Gael Varoquaux, Mathieu Blondel and Tom Dupre la Tour
-# SPDX-License-Identifier: BSD-3-Clause
 
 import warnings
 
@@ -162,7 +163,7 @@ def _cg(fhess_p, fgrad, maxiter, tol, verbose=0):
                 print(
                     f"  Inner CG solver iteration {i} stopped with\n"
                     f"    tiny_|p| = eps * ||p||^2, eps = {eps}, "
-                    f"squred L2 norm ||p||^2 = {psupi_norm2}\n"
+                    f"squared L2 norm ||p||^2 = {psupi_norm2}\n"
                     f"    curvature <= tiny_|p|: {curv} <= {eps * psupi_norm2}"
                 )
             break

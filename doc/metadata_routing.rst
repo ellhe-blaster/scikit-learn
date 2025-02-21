@@ -84,8 +84,8 @@ Weighted scoring and fitting
 The splitter used internally in :class:`~linear_model.LogisticRegressionCV`,
 :class:`~model_selection.GroupKFold`, requests ``groups`` by default. However, we need
 to explicitly request `sample_weight` for it and for our custom scorer by specifying
-`sample_weight=True` in :class:`~linear_model.LogisticRegressionCV`s `set_fit_request()`
-method and in :func:`~metrics.make_scorer`s `set_score_request()` method. Both
+`sample_weight=True` in :class:`~linear_model.LogisticRegressionCV`'s `set_fit_request()`
+method and in :func:`~metrics.make_scorer`'s `set_score_request()` method. Both
 :term:`consumers <consumer>` know how to use ``sample_weight`` in their `fit()` or
 `score()` methods. We can then pass the metadata in
 :func:`~model_selection.cross_validate` which will route it to any active consumers::
@@ -284,7 +284,10 @@ Meta-estimators and functions supporting metadata routing:
 - :class:`sklearn.ensemble.VotingRegressor`
 - :class:`sklearn.ensemble.BaggingClassifier`
 - :class:`sklearn.ensemble.BaggingRegressor`
+- :class:`sklearn.feature_selection.RFE`
+- :class:`sklearn.feature_selection.RFECV`
 - :class:`sklearn.feature_selection.SelectFromModel`
+- :class:`sklearn.feature_selection.SequentialFeatureSelector`
 - :class:`sklearn.impute.IterativeImputer`
 - :class:`sklearn.linear_model.ElasticNetCV`
 - :class:`sklearn.linear_model.LarsCV`
@@ -322,6 +325,3 @@ Meta-estimators and tools not supporting metadata routing yet:
 
 - :class:`sklearn.ensemble.AdaBoostClassifier`
 - :class:`sklearn.ensemble.AdaBoostRegressor`
-- :class:`sklearn.feature_selection.RFE`
-- :class:`sklearn.feature_selection.RFECV`
-- :class:`sklearn.feature_selection.SequentialFeatureSelector`
